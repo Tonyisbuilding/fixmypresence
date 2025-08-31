@@ -1,0 +1,116 @@
+/* ---- Main Process Section ---- */
+.process-section {
+    background-color: #f0f2f5;
+    padding: 80px 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  /* Section header already styled via .section-header, .services-badge, .section-title */
+  
+  /* Steps Grid */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: start; /* make all cards equal height */
+  }
+  
+  /* Individual Card */
+  .process-card {
+    /* reserve space for a 1px border, rounded corners & clipping */
+    border: 1px solid transparent;
+    border-radius: 16px;
+    overflow: hidden;
+  
+    /* two stacked backgrounds:
+       1) solid fill (DBEEF2)
+       2) gradient stroke (blue → light blue)
+    */
+    background-image:
+      linear-gradient(#DBEEF2, #DBEEF2),                           /* card interior */
+      linear-gradient(180deg, #0478AD 17%, #EDF3F4 100%);          /* border ring */
+  
+    /* paint the fill only inside the padding-box,
+       paint the gradient only in the border area */
+    background-origin: padding-box, border-box;
+    background-clip:   padding-box, border-box;
+  
+    /* your existing padding, flex, etc */
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+    height: 60vh;
+
+  }
+  
+  
+  /* Push the body to the bottom */
+  .card-body {
+    margin-top: auto;
+  }
+  
+  /* Icon */
+  .card-icon img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  /* Step number + divider */
+  .card-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .step-number {
+    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #004F74;
+  }
+  
+  .step-divider {
+    flex: 1;
+    border: none;
+    border-top: 1px solid rgba(0, 33, 48, 0.2);
+  }
+  
+  /* Title & Description */
+  .process-card .card-title {
+    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #004F74;
+    margin: 0 0 12px 0;
+  }
+  
+  .process-card .card-description {
+    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #004F74;
+    margin: 0;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .process-section {
+      padding: 40px 16px;
+    }
+    .section-title {
+      font-size: 32px;
+    }
+    .process-card {
+      padding: 24px;
+    }
+    .process-card .card-title {
+      font-size: 20px;
+    }
+    .process-card .card-description {
+      font-size: 14px;
+    }
+  }
+  

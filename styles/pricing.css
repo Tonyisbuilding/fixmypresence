@@ -1,0 +1,511 @@
+/* styles/pricing.css */
+.pricing-section {
+    /* background: #f8f9fa; */
+    padding: 40px 0;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
+  }
+  
+  .pricing-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .pricing-header {
+    margin-bottom: 60px;
+  }
+  
+  .pricing-badge {
+    display: inline-block;
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 20px;
+  }
+  
+  .pricing-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 800px;
+  }
+  
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+  
+  .pricing-card {
+    border-radius: 24px;
+    padding: 20px;
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+
+  /* -------------------lite card------------------------ */
+  
+  /* .lite-card {
+    background: linear-gradient(135deg, #94a3b8 0%, #cbd5e1 100%);
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    color: #1e293b;
+  } */
+
+
+
+/* -------------------full scope card------------------------ */
+
+  .full-scope-card {
+    position: relative;
+    overflow: hidden;
+    color: #EDF3F4;
+    background:
+      /* topmost: radial “highlights” */
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      /* bottom: the main gradient */
+      linear-gradient(135deg, #000A0F 0%, #607580 100%);
+  }
+  
+  .full-scope-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("/images/Cloud.png") center/cover no-repeat;
+    opacity: 0.4;
+    z-index: 0;
+  }
+  
+  .full-scope-card > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+
+  
+  /* -------------------pro card------------------------ */
+
+  .pro-card, .lite-card {
+    position: relative;
+    overflow: hidden;
+    color: #031D2A;
+    background:
+      /* topmost: radial “highlights” */
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      /* bottom: the main gradient */
+      linear-gradient(135deg, rgba(96,117,128,0.5) 0%, #EDF3F4 100%);
+    }
+  
+  .pro-card::before, .lite-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("/images/Cloud.png") center/cover no-repeat;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  
+  .pro-card > *, .lite-card > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+/*   
+  .pro-card {
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    color: #1e293b;
+  } */
+  
+  /* .full-scope-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    color: white;
+  } */
+  
+  .card-icon {
+    margin-bottom: 20px;
+  }
+  
+  .card-icon svg {
+    color: currentColor;
+    opacity: 0.8;
+  }
+  
+  .card-title01 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: currentColor;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    color: currentColor;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+  
+  .card-price {
+    margin-bottom: 24px;
+  }
+  
+  .price-amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: currentColor;
+  }
+  
+  .price-period {
+    font-size: 14px;
+    color: currentColor;
+    opacity: 0.7;
+  }
+  
+ .divider {
+  height: 1.5px;
+  margin-bottom: 24px;
+
+  background: linear-gradient(
+    to right,
+    rgba(3, 29, 42, 1)   0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0)   100%
+  );
+  border: none; 
+}
+
+
+/* override for the “full-scope-card” */
+.full-scope-card .divider {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.8)   0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0)   100%
+    );
+  }
+  
+  .card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+  }
+  
+  .card-features li {
+    font-size: 14px;
+    line-height: 1.4;
+    color: currentColor;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .check-icon {
+    color: currentColor;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  
+  .addon-section {
+    margin-bottom: 24px;
+    background-color: #EDF3F4;
+    padding: 0px 15px;
+    border-radius: 40px;
+  }
+  
+  .addon-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+  
+  .addon-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .toggle-switch {
+    width: 36px;
+    height: 20px;
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(30, 41, 59, 0.5);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  
+  .toggle-switch.active {
+    background: rgba(34, 45, 52, 1);    /* stronger when “on” */
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    /* center vertically: */
+    top: 50%;
+    transform: translateY(-50%);
+    /* horizontal offset when off */
+    left: 2px;
+  
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-switch.active .toggle-slider {
+    /* move it right by (track width – thumb width – 2px*2 border) */
+    transform: translate(16px, -50%);
+  }
+  
+  .addon-text {
+    font-size: 13px;
+    color: currentColor;
+    opacity: 0.8;
+  }
+  
+  .addon-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: currentColor;
+  }
+  
+  .customize-section {
+    margin-bottom: 24px;
+    padding: 10px;
+    background: #EDF3F4;
+    border-radius: 12px;
+
+    color: #1e293b;  
+    font-weight: 500;
+  }
+  
+
+  
+  .customize-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .customize-icon {
+    font-size: 14px;
+  }
+  
+  .customize-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: currentColor;
+  }
+  
+  .customize-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+  }
+  
+  .option-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .option-icon {
+    font-size: 12px;
+    color: currentColor;
+    opacity: 0.6;
+  }
+  
+  .option-text {
+    font-size: 13px;
+    color: currentColor;
+    opacity: 1;
+  }
+  
+  .option-right {
+    display: grid;
+    /* 3 columns: button, number, button */
+    grid-template-columns: 32px 1fr 32px;
+    align-items: center;
+    gap: 8px;
+  }
+  .option-btn {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(34, 45, 52, 0.3);
+    color: currentColor;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;             /* don’t let them shrink */
+
+  }
+  
+  .option-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .option-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: #EDF3F4;
+    min-width: 30px;
+    text-align: center;
+    background-color: #222D34;
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+
+  .option-value {
+    width: 48px;                /* tweak this so “200” fits nicely */
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .delivery-text {
+    font-size: 13px;
+    color: currentColor;
+    opacity: 0.7;
+    margin-bottom: 16px;
+    width: 50%;
+    text-align: left;
+  }
+  
+  .get-started-btn {
+    background: linear-gradient(90deg, #1C3A48 0%, #24505D 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .get-started-btn:hover {
+    background: #334155;
+    transform: translateY(-1px);
+  }
+  
+  .full-scope-btn {
+    background: linear-gradient(90deg, rgba(57, 129, 149, 0.8) 0%, #EDF3F4 100%) !important;
+    color: #1e293b;
+  }
+  
+  .full-scope-btn:hover {
+    background: #f1f5f9;
+  }
+
+
+/* ensure parent is positioned for absolute children */
+.pricing-card.full-scope-card {
+    position: relative;
+  }
+  
+  /* badge styling, repositioned at top-right */
+  .plan-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #FBBF24;        /* amber-400, less harsh than pure yellow */
+    color: #1e293b;                   /* your dark text color */
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  
+  
+  @media (max-width: 1024px) {
+    .pricing-cards {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .pricing-card {
+      min-height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .pricing-title {
+      font-size: 28px;
+    }
+    
+    .pricing-card {
+      padding: 24px;
+    }
+    
+    .price-amount {
+      font-size: 28px;
+    }
+  }
+
+
+
+  

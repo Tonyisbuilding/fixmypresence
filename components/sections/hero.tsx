@@ -1,0 +1,116 @@
+// components/sections/Hero.tsx
+import React from 'react';
+import Navbar from '@/components/sections/nav-bar';
+
+interface HeroProps {
+  /** The current value of the “brief or URL” input */
+  brief: string;
+  /** Called whenever the user types or pastes into the input */
+  onBriefChange: (val: string) => void;
+  /** Called when the user clicks “Get started Now” */
+  onGetStarted: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
+  return (
+
+    // <div className="header-container">
+    <section className="homepage-hero">
+      <h1 className="homepage-hero-title">
+        We Create Digital Presence
+        <br />
+        That Speaks Before You Do
+      </h1>
+
+      <p className="homepage-hero-subtitle">
+        We create and refine websites, brand identities, and sales materials for trust-first
+        businesses  <br />  —to make their digital presence communicates with their audience the way it truly should.
+      </p>
+
+      <div className="homepage-input-section">
+        <input
+          type="text"
+          value={brief}
+          onChange={e => onBriefChange(e.target.value)}
+          placeholder="paste website url/project brief"
+          className="homepage-url-input"
+        />
+      </div>
+
+      <div className="homepage-button-group">
+        <button
+          className="Hero-btn-pry"
+          onClick={onGetStarted}
+        >
+          Get started Now
+          <div className="homepage-arrow-wrapper">
+            <div className="homepage-arrow">
+              <img
+                src="/icons/Arrow.svg"
+                alt="Arrow icon"
+                width={17}
+                height={17}
+              />
+            </div>
+          </div>
+        </button>
+
+        <button
+          className="Hero-btn-sec"
+        >
+          Book a call
+          <div className="homepage-arrow-wrapper">
+            <div className="homepage-arrow">
+              <img
+                src="/icons/call.svg"
+                alt="Call icon"
+                width={17}
+                height={17}
+              />
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <p className="homepage-submission-note">
+        <u>Your submission helps us prep for a more focused, valuable call.</u>
+      </p>
+
+      {/* Logo Marquee */}
+      <div className="logo-marquee">
+        <p className="marquee-text">Trusted by teams and Founders worldwide</p>
+        <div className="marquee">
+          <div className="marquee__inner">
+            {(() => {
+              const base = [
+                { src: '/images/Logo1.png', height: 40 },
+                { src: '/images/logo2.png', height: 40 },
+                { src: '/images/logo3.png', height: 30 }, // logo3 @ 30px
+                { src: '/images/logo4.png', height: 40 },
+                { src: '/images/logo5.png', height: 25 }, // logo5 @ 25px
+                { src: '/images/logo6.png', height: 40 },
+              ];
+              const track = base.concat(base); // duplicate for seamless loop
+              return track.map((item, idx) => (
+                <img
+                  key={idx}
+                  src={item.src}
+                  alt=""
+                  className="marquee-logo"
+                  style={{ height: item.height, maxHeight: item.height }}
+                />
+              ));
+            })()}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    // </div>
+
+
+
+  );
+};
+
+export default Hero;

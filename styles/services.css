@@ -1,0 +1,253 @@
+/* Main Services Section */
+.services-section {
+  background-color: #f0f2f5;
+  padding: 80px 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 60px;
+}
+
+.services-badge {
+  display: inline-block;
+  background-color: #e8f4f8;
+  color: #2c5aa0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid #d1e7dd;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #002130;
+  margin: 0;
+  font-family: 'Haas Grot Disp Trial', sans-serif;
+}
+
+/* Services Grid */
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Service Cards */
+.service-card {
+    /* reserve space for a 2px border */
+    border: 1px solid transparent;
+    border-radius: 16px;
+    overflow: hidden;
+  
+    /* two stacked backgrounds:
+       1) your light fill-gradient clipped inside the padding-box
+       2) the blue→light-blue stroke clipped to the border-box
+    */
+    background-image:
+      linear-gradient(180deg, #DBEEF2 50%, #EDF3F4 100%),   /* card interior */
+      linear-gradient(180deg, #0478AD 17%, #EDF3F4 100%); /* border ring */
+  
+    /* tell each layer where to paint:
+       – first (fill) inside padding-box
+       – second (stroke) over the full border-box
+    */
+    background-origin: padding-box, border-box;
+    background-clip:  padding-box, border-box;
+  }
+  
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;           /* top:0; right:0; bottom:0; left:0 */
+    padding: 2px;       /* == your border width */
+    border-radius: 16px;
+    border: 2px solid;       /* stroke thickness */
+   
+    pointer-events: none;
+    z-index: -1;
+  }
+
+/* .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+    border-radius: 16px;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    z-index: -1;
+  }
+   */
+
+/* Card Content */
+.card-content {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  gap: 60px;
+  align-items: start;
+}
+
+.card-text {
+  padding-top: 10px;
+}
+
+.card-title {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #002130;
+  margin: 0 0 24px 0;
+  font-family: 'Haas Grot Disp Trial', sans-serif;
+}
+
+.card-description {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #002130;
+  margin: 0 0 32px 0;
+  font-weight: 500;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list li {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #002130;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 24px;
+  font-weight: 400;
+
+}
+
+.service-list li:before {
+  content: "↪";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2c5aa0;
+  font-size: 16px;
+}
+
+/* Card Images */
+.card-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+.for-img {
+    display: flex;
+    gap: 10px;
+}
+.card-images img {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .card-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .card-images {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 16px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  /* .card-title {
+    font-size: 28px;
+  } */
+
+  .card-description {
+    font-size: 16px;
+  }
+
+  .card-content {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+
+  .card-images {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-images img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .for-img img {
+    width: 350px;
+    max-width: 100%;
+  }
+
+.hide-mobile {
+    display: none;
+  }
+
+  .service-list li {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #002130;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 24px;
+    font-weight: 400;
+  
+  }
+
+  .section-title {
+    font-size: 22px !important;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #002130;
+    margin: 0;
+    font-family: 'Haas Grot Disp Trial', sans-serif;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+}

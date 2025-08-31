@@ -1,0 +1,161 @@
+/* homepage.css */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  min-height: 100vh;
+  background: rgba(232, 242, 244, 0.68);
+  background-image: url("/images/Bg-grain.svg");
+  background-repeat: repeat;
+  background-size: auto;
+  width: 100%;
+}
+
+/* Navigation Styles */
+.homepage-nav {
+  /* position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); */
+  position: fixed;
+    top: 0;
+      left: 50%;
+  transform: translateX(-50%);
+
+
+
+  /* cap its maximum width and let it shrink as needed */
+  max-width: 1940px;
+  width: 100%;           /* will fill until it hits max-width */
+  padding: 35px 60px 10px;
+
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(245, 250, 255, 0.094);
+  backdrop-filter: blur(50px);
+
+  border-radius: 8px;
+  height: 10vh;
+  /* max-height: 5rem;
+  min-height: 5rem; */
+}
+
+.homepage-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homepage-logo-img {
+  height: 3rem; /* adjust as needed */
+  object-fit: contain;
+  display: block;
+}
+
+.homepage-logo-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* Show/hide based on viewport */
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+.homepage-logo-square {
+  width: 12px;
+  height: 12px;
+  background-color: #2c3e50;
+  border-radius: 2px;
+}
+
+.homepage-logo-square::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #34495e;
+  border-radius: 1px;
+}
+
+.homepage-logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.homepage-nav-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.homepage-nav-link {
+  color: #0e1c29;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.homepage-nav-link:hover {
+  color: #2c3e50;
+}
+
+.Nav-button {
+  background: #053D4D;
+  color: #fff;
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;       /* bigger touch area */
+  font-size: 16px;          /* slightly larger text */
+  font-weight: 500;
+  border-radius: 12px;
+  gap: 8px;                 /* space between icon & text */
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+
+    line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+.Nav-button svg,
+.Nav-button img {
+  /* width: 1rem;
+  height: 1rem; */
+  margin-right: 0.5rem;  /* spacing between icon and text */
+}
+
+.homepage-message-btn .homepage-arrow-wrapper {
+  background: none !important;
+}
+
+.homepage-message-btn {
+  padding: 14px 24px !important; 
+
+}
+
+.homepage-message-btn .homepage-arrow {
+  background: none !important;
+}
+
+.homepage-message-btn:hover {
+  background-color: #1e3d72;
+}
+
+.homepage-message-icon {
+  font-size: 16px !important;
+}
