@@ -4,14 +4,14 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-    font-family: 'Haas Grot Disp Trial', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
 
 }
 
 html, body {
   max-width: 100vw;
   /* overflow-x: hidden; */
-  font-family: 'Haas Grot Disp Trial', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #EDF3F4;
@@ -315,6 +315,5 @@ body {
 .cancel-btn:hover {
   background: #F1F5F9;
 }
-
 
 

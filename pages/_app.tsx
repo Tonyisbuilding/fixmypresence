@@ -1,4 +1,3 @@
-import "@/styles/fonts.css";
 import "@/styles/globals.css";
 import "@/styles/Hero.css";
 import "@/styles/intro.css";

@@ -15,7 +15,7 @@
   /* .view-more button */
   .view-more {
     margin-left: auto;
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
     color: #0E2A37;
     text-decoration: none;
@@ -96,7 +96,7 @@
   }
   
   .overlay-title {
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: #002130;
@@ -104,7 +104,7 @@
   }
   
   .overlay-metrics {
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #002130;
@@ -112,7 +112,7 @@
   }
   
   .overlay-link {
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: #2c5aa0;

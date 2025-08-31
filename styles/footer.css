@@ -39,7 +39,7 @@
   
   /* Left column */
   .footer-left .logo {
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 800;
     font-size: 32px;
     color: #002130;
@@ -106,7 +106,7 @@
     object-fit: cover;
   }
   .call-title {
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
     font-size: 55px;
     background: linear-gradient(to right, rgba(23, 52, 60, 1), rgba(62, 140, 162, 1));
@@ -126,7 +126,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: #fff;
@@ -155,7 +155,7 @@
   }
   
   .call-email-text {
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #4a4a4a;
     font-size: 18px;
     line-height: 1.4;
@@ -209,7 +209,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 600;
     font-size: 22px;
     color: #002130;
@@ -251,7 +251,7 @@
   
   .footer-bottom p,
   .footer-bottom a {
-    font-family: 'Haas Grot Disp Trial', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
     color: #002130;
     margin: 0;
