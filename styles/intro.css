@@ -1,52 +1,4 @@
-/* .intro-section {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 48px 32px 0 32px;
-  background: EDF3F4;
-  box-sizing: border-box;
-}
 
-.intro-content-wrapper {
-  width: 100%;
-}
-
-.intro-headline {
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-.intro-title {
-  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-  font-weight: 700;
-  color: #64748b;
-  line-height: 1.1;
-  text-align: left;
-  margin: 0;
-  word-break: break-word;
-}
-
-.animated-text-container {
-  display: block;
-}
-
-.animated-word {
-  font-size: inherit;
-  font-weight: inherit;
-  background: linear-gradient(
-    90deg,
-    var(--target-color) 0%,
-    var(--target-color) calc(var(--word-progress) * 100%),
-    #64748b calc(var(--word-progress) * 100%),
-    #64748b 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-out;
-  display: inline;
-}
-
-/* ensure a visual space between animated words */
 .animated-word::after {
   content: ' ';
 }
@@ -280,7 +232,7 @@
 }
 
 
- */
+
 
 
  /* Intro Section Styles */

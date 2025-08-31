@@ -1,37 +1,38 @@
 // components/TestimonialSection.tsx
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const testimonials = [
   {
-    image: '/images/paul-lamain.png',
+    image: '/images/Paul-lamain.png',
     name: 'Paul Lamain',
     role: 'CEO at Edge Capital',
     quote:
       '“Tony has this calm, thoughtful way of working that immediately builds trust. He doesn’t just ask for design preferences—he asks the kind of questions that make you rethink how you’re presenting your business. What he delivered didn’t just look great—it felt right. Sharp, intentional, and exactly what we needed.”',
   },
   {
-    image: '/images/paul-lamain.png',
+    image: '/images/Paul-lamain.png',
     name: 'Jane Doe',
     role: 'Founder at BrightVault',
     quote:
       '“Tony took our vague ideas and turned them into a bold brand that really resonates. His process is thorough, and he always made sure we understood every decision.”',
   },
   {
-    image: '/images/paul-lamain.png',
+    image: '/images/Paul-lamain.png',
     name: 'Ahmed Khan',
     role: 'COO at FinEdge',
     quote:
       '“Working with Tony was a game-changer. He pinpointed exactly what was holding back our site, then delivered a crisp, modern design that’s already boosting engagement.”',
   },
   {
-    image: '/images/paul-lamain.png',
+    image: '/images/Paul-lamain.png',
     name: 'Li Wei',
     role: 'CMO at CryptoWave',
     quote:
       '“Tony’s attention to detail is unmatched. From typography to micro-interactions, every element feels intentional and polished. Highly recommended.”',
   },
   {
-    image: '/images/paul-lamain.png',
+    image: '/images/Paul-lamain.png',
     name: 'Sofia Martinez',
     role: 'Head of Marketing at GreenFunds',
     quote:
@@ -63,7 +64,7 @@ export default function TestimonialSection() {
 
         <div className="testimonial-footer">
           <div className="holder">
-            <img src={image} alt={name} className="testimonial-avatar" />
+            <Image src={image} alt={name} className="testimonial-avatar" width={64} height={64} />
             <div className="testimonial-info">
               <p className="testimonial-name">{name}</p>
               <p className="testimonial-role">{role}</p>

@@ -1,5 +1,6 @@
 // components/Intro.tsx
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 
 
@@ -148,10 +149,13 @@ const Intro = () => {
                   onClick={() => setIsVideoPlaying(true)}
                 >
                   {/* blurred thumbnail */}
-                  <img
+                  <Image
                     className="video-thumb"
                     src={YOUTUBE_THUMB}
                     alt="Video thumbnail"
+                    fill
+                    sizes="100vw"
+                    priority
                   />
 
                   {/* play button + info on top */}

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const ServicesSection = () => {
     return (
       <section className="services-section">
@@ -20,8 +22,8 @@ const ServicesSection = () => {
               </div>
               <div className="card-images">
                 <div className="for-img">
-                  <img className="hide-mobile" src="/images/image01.jpg" alt="Website design example 1" />
-                  <img src="/images/image01.jpg" alt="Website design example 2" />
+                  <Image className="hide-mobile" src="/images/image01.jpg" alt="Website design example 1" width={600} height={400} />
+                  <Image src="/images/image01.jpg" alt="Website design example 2" width={600} height={400} />
                 </div>
                 <div className="for-content">
                   <p className="card-description">
@@ -48,8 +50,8 @@ const ServicesSection = () => {
               </div>
               <div className="card-images">
                 <div className="for-img">
-                <img className="hide-mobile" src="/images/image01.jpg" alt="Website design example 1" />
-                <img src="/images/image01.jpg" alt="Brand identity example 2" />
+                <Image className="hide-mobile" src="/images/image01.jpg" alt="Website design example 1" width={600} height={400} />
+                <Image src="/images/image01.jpg" alt="Brand identity example 2" width={600} height={400} />
                 </div>
                 <div className="for-content">
                   <p className="card-description">
@@ -78,8 +80,8 @@ const ServicesSection = () => {
               </div>
               <div className="card-images">
                 <div className="for-img">
-                <img className="hide-mobile" src="/images/image01.jpg" alt="Website design example 1" />
-                <img src="/images/image01.jpg" alt="Presentation design example 2" />
+                <Image className="hide-mobile" src="/images/image01.jpg" alt="Website design example 1" width={600} height={400} />
+                <Image src="/images/image01.jpg" alt="Presentation design example 2" width={600} height={400} />
                 </div>
                 <div className="for-content">
                   <p className="card-description">

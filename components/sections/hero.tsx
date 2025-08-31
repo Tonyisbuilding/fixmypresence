@@ -1,6 +1,6 @@
 // components/sections/Hero.tsx
 import React from 'react';
-import Navbar from '@/components/sections/nav-bar';
+import Image from 'next/image';
 
 interface HeroProps {
   /** The current value of the “brief or URL” input */
@@ -45,6 +45,7 @@ const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
           Get started Now
           <div className="homepage-arrow-wrapper">
             <div className="homepage-arrow">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/icons/Arrow.svg"
                 alt="Arrow icon"
@@ -61,6 +62,7 @@ const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
           Book a call
           <div className="homepage-arrow-wrapper">
             <div className="homepage-arrow">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/icons/call.svg"
                 alt="Call icon"
@@ -91,15 +93,23 @@ const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
                 { src: '/images/logo6.png', height: 40 },
               ];
               const track = base.concat(base); // duplicate for seamless loop
-              return track.map((item, idx) => (
-                <img
-                  key={idx}
-                  src={item.src}
-                  alt=""
-                  className="marquee-logo"
-                  style={{ height: item.height, maxHeight: item.height }}
-                />
-              ));
+              return track.map((item, idx) => {
+                const dims = item.height === 40
+                  ? { width: 120, height: 40 }
+                  : item.height === 30
+                  ? { width: 90, height: 30 }
+                  : { width: 75, height: 25 };
+                return (
+                  <Image
+                    key={idx}
+                    src={item.src}
+                    alt="Client logo"
+                    className="marquee-logo"
+                    {...dims}
+                    sizes="(max-width: 640px) 80px, (max-width: 1024px) 100px, 120px"
+                  />
+                );
+              });
             })()}
           </div>
         </div>

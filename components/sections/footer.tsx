@@ -1,5 +1,6 @@
 // components/Footer.tsx
 import React from 'react'
+import Image from 'next/image'
 import { Mail } from 'lucide-react'
 import {
     FaLinkedin,
@@ -15,10 +16,9 @@ export default function Footer() {
                 {/* Left side */}
                 <div className="footer-left">
                     <div className="footer-logo">
-                        <img
-                            src="/images/Fixmypresence-logo.svg"
-                            alt="fixmypresence logo"
-                        />
+                        {/* SVG logo can remain an <img> */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/images/Fixmypresence-logo.svg" alt="fixmypresence logo" />
                     </div>
                     <p className="tagline">
                         we design your first impression—website, brand
@@ -76,10 +76,12 @@ export default function Footer() {
                 <div className="footer-right">
                     <div className="call-card">
                         <div className="call-top">
-                            <img
-                                src="/images/paul-lamain.png"
+                            <Image
+                                src="/images/Paul-lamain.png"
                                 alt="Tony"
                                 className="avatar"
+                                width={64}
+                                height={64}
                             />
 
                             <h3 className="call-title">Book an intro call</h3>
@@ -94,6 +96,7 @@ export default function Footer() {
                                 <span>
                                     <div className="homepage-arrow-wrapper">
                                         <div className="homepage-arrow">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
                                             <img
                                                 src="/icons/call.svg"
                                                 alt="Call Icon"

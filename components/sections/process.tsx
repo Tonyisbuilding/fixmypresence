@@ -1,5 +1,6 @@
 // components/ProcessSection.tsx
 import React from 'react'
+import Image from 'next/image'
 
 const steps = [
   {
@@ -42,7 +43,7 @@ const ProcessSection = () => {
         {steps.map((s) => (
           <div key={s.number} className="process-card">
             <div className="card-icon">
-              <img src={s.icon} alt="" />
+              <Image src={s.icon} alt="" width={48} height={48} />
             </div>
             <div className="card-body">
               <div className="card-step">

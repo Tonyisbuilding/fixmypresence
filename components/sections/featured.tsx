@@ -1,5 +1,6 @@
 // components/FeaturedProjectsSection.tsx
 import React from 'react'
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 
 
@@ -67,7 +68,7 @@ export default function FeaturedProjectsSection() {
 
                     return (
                         <div key={p.id} className={`project-card ${areaClass}`}>
-                            <img src={p.image} alt={p.alt} className="project-image" />
+                            <Image src={p.image} alt={p.alt} className="project-image" fill sizes="(max-width: 768px) 100vw, 50vw" />
                             <div className="project-overlay">
                                 <div className="overlay-content">
                                     <h3 className="overlay-title">{p.title}</h3>

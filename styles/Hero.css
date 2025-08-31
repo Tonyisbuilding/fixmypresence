@@ -275,42 +275,21 @@ font-family: "Haas Grot Disp Trial", -apple-system, BlinkMacSystemFont, "Segoe U
   );
 }
 
-/* 
-/* Responsive Design */
-/* @media (max-width: 768px) {
+/* Responsive Design (legacy demo)
+@media (max-width: 768px) {
   .homepage-nav {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
   }
-  
-  .homepage-nav-links {
-    gap: 24px;
-  }
-  
-  .homepage-hero-title {
-    font-size: 48px;
-  }
-  
-  .homepage-hero-subtitle {
-    font-size: 16px;
-  }
-  
-  .homepage-button-group {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .homepage-button {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 16px;
-  }
-  
-  .homepage-hero {
-    padding: 40px 20px;
-  }
+  .homepage-nav-links { gap: 24px; }
+  .homepage-hero-title { font-size: 48px; }
+  .homepage-hero-subtitle { font-size: 16px; }
+  .homepage-button-group { flex-direction: column; align-items: center; }
+  .homepage-button { width: 100%; max-width: 300px; margin-bottom: 16px; }
+  .homepage-hero { padding: 40px 20px; }
 }
+*/
 
 @media (max-width: 480px) {
   .homepage-hero-title {
@@ -327,11 +306,8 @@ font-family: "Haas Grot Disp Trial", -apple-system, BlinkMacSystemFont, "Segoe U
     padding: 10px 16px;
     font-size: 13px;
   }
-}  */
+}  
 
-/* ======================= */
-/* Mobile Hero & Nav Styles */
-/* ======================= */
 @media (max-width: 768px) {
   /* 1) Make the nav a simple row: logo left, “Send a message” right */
 
