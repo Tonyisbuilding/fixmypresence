@@ -85,18 +85,16 @@ const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
           <div className="marquee__inner">
             {(() => {
               const base = [
-                { src: '/images/Logo1.png', height: 40 },
-                { src: '/images/logo2.png', height: 40 },
-                { src: '/images/logo3.png', height: 30 }, // logo3 @ 30px
-                { src: '/images/logo4.png', height: 40 },
-                { src: '/images/logo5.png', height: 25 }, // logo5 @ 25px
-                { src: '/images/logo6.png', height: 40 },
+                { src: '/images/Logo1.png', height: 30 },
+                { src: '/images/logo2.png', height: 30 },
+                { src: '/images/logo3.png', height: 30 },
+                { src: '/images/logo4.png', height: 30 },
+                { src: '/images/logo5.png', height: 25 }, // keep smaller
+                { src: '/images/logo6.png', height: 30 },
               ];
               const track = base.concat(base); // duplicate for seamless loop
               return track.map((item, idx) => {
-                const dims = item.height === 40
-                  ? { width: 120, height: 40 }
-                  : item.height === 30
+                const dims = item.height === 30
                   ? { width: 90, height: 30 }
                   : { width: 75, height: 25 };
                 return (

@@ -217,8 +217,7 @@ font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
 .marquee-logo {
   flex: 0 0 auto;
   margin: 0 32px;
-  height: 40px;        /* uniform height */
-  max-height: 40px;    /* ensure no overflow */
+  /* Do not force height via CSS; let Next/Image width/height control size */
   width: auto;         /* keep original aspect ratio */
   object-fit: contain; /* prevent distortion for varying logo sizes */
   display: block;      /* eliminate inline whitespace quirks */
