@@ -10,6 +10,8 @@
 
 html, body {
   max-width: 100vw;
+    overflow: visible !important; /* Force all to visible */
+
   /* overflow-x: hidden; */
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
   -webkit-font-smoothing: antialiased;
@@ -23,13 +25,13 @@ a {
 }
 
 html {
-  overflow-x: hidden;
+    overflow: visible !important; /* Force all to visible */
+
   overflow-y: auto;    /* ensure vertical scroll is on */
   scroll-behavior: smooth;
 
 }
 body {
-  overflow-x: hidden;  /* only hide sideways scroll */
   overflow-y: auto;    /* just in case */
 }
 
@@ -315,5 +317,43 @@ body {
 .cancel-btn:hover {
   background: #F1F5F9;
 }
+
+
+
+.Nav-ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;            /* space between call button and WhatsApp */
+}
+
+.Nav-whatsapp {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 999px;
+  background: #25D366;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12); */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.whatsapp-tag {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4d4d;
+  color: #fff;
+  padding: 2px 5px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  line-height: 1;
+}
+
 
 

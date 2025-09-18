@@ -1,13 +1,15 @@
-import "@/styles/globals.css";
-import "@/styles/Hero.css";
-import "@/styles/intro.css";
-import "@/styles/services.css"; // Add this line
-import "@/styles/process.css"; // Add this line
-import "@/styles/featured.css"; // Add this line
-import "@/styles/testimonials.css"; // Add this line
-import "@/styles/footer.css"; 
-import "@/styles/pricing.css"; 
-import "@/styles/nav-bar.css"; 
+import '../styles/globals.css';
+import '../Hero.css';
+import '../styles/intro.css';
+import '../styles/services.css';
+import '../styles/process.css';
+import '../styles/featured.css';
+import '../styles/testimonials.css';
+import '../styles/footer.css';
+import '../styles/pricing.css';
+import '../styles/nav-bar.css';
+import '../styles/faq.css';
+
 
 
 

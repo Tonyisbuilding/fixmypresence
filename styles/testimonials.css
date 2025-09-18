@@ -1,190 +1,324 @@
-/* ---- Testimonial Section ---- */
-.testimonial-section {
-    background-color: #f0f2f5;
-    padding: 80px 24px;
-    max-width: 1600px;
-    margin: 0 auto;
-    display: flex;
-  }
-  
-  /* reuse .section-header and .services-badge from above */
-  
-  /* layout: two columns, quote on the right */
-  .testimonial-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: start;
-    margin-top: 40px;
-    margin-left: auto;
-    max-width: 900px;
-  }
-  
-  /* quote styling */
-  .testimonial-quote {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.6;
-    color: #002130;
-    margin: 0;
-  }
-  
-  /* author + nav row */
-  .testimonial-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    margin-top: 32px;
-    width: 700px;
-  }
-  
-  /* avatar */
-  .testimonial-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
-  
-  /* name & role */
-  .testimonial-info {
-    flex-shrink: 0;
-    width: 550px;
-  }
-  
-  .testimonial-name {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    color: #002130;
-    margin: 0 0 4px;
-  }
-  
-  .testimonial-role {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #4a4a4a;
-    margin: 0;
-  }
-
-  .holder {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  /* dots */
-  .testimonial-dots {
-    margin-left: auto;
-    display: flex;
-    gap: 8px;
-  }
-  
-  .testimonial-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #d1d5db;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  
-  .testimonial-dot.active {
-    background: #002130;
-  }
-  
-  /* responsive: single column on smaller screens */
-/* === Testimonial Section Mobile Optimizations === */
-@media (max-width: 768px) {
-  /* Stack everything vertically and tighten padding */
-  .testimonial-section {
-    display: block;
-    padding: 40px 16px;
-  }
-
-  /* Single‐column grid, full width */
-  .testimonial-grid {
-    display: block;
-    margin: 24px 0 0;
-    max-width: none;
-    gap: 0px;
-    
-  }
-
-  /* Shrink the quote text slightly */
-  .testimonial-quote {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 24px;
-    text-align: left;
-    min-height: 200px;
-  }
-
-  /* Center the footer block under the quote */
-  .testimonial-footer {
-    width: 100%;
-    margin-top: 1px;
-    align-items: center;
-    gap: 16px;
-  }
-
-  /* Avatar smaller and perfectly round */
-  .testimonial-avatar {
-    width: 80px;
-    height: 80px;
-
-  }
-
-  /* Tighten up the info block */
-  .testimonial-info {
-    width: auto;
-    text-align: center;
-  }
-  .testimonial-name {
-    font-size: 18px;
-    margin-bottom: 4px;
-  }
-  .testimonial-role {
-    font-size: 14px;
-  }
-
-  /* Center the dots and shrink them */
-  .testimonial-dots {
-    margin: 0;
-    gap: 6px;
-  }
-  .testimonial-dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  /* Move the footer below if you had column layout */
-  .holder {
-    flex-direction: column;
-    gap: 12px;
-  }
+/* ---- Testimonials Section ---- */
+.testimonials-section {
+  background-color: #EDF3F4;
+  padding: 80px 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-/* even smaller tweaks for narrow phones */
-@media (max-width: 480px) {
-  .testimonial-section {
-    padding: 32px 12px;
+.testimonials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  max-width: 1920px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials-title {
+  flex: 1;
+}
+
+.title-line-1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #002130;
+  margin: 0;
+}
+
+.title-line-2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #7A8B95;
+  margin: 0;
+}
+
+.testimonials-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-button {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #002130;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #002130;
+}
+
+.nav-button:hover {
+  background: #002130;
+  color: white;
+}
+
+.nav-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---- Testimonials Content Layout ---- */
+.testimonials-content {
+  display: flex;
+  gap: 24px;
+  max-width: 1920px;
+  width: 95%;
+  margin: 0 auto 40px auto;
+}
+
+.testimonial-card {
+  flex: 0 0 60%; /* Each card takes 60% width instead of 50% */
+  display: flex;
+  gap: auto;
+  min-height: 400px;
+  background: white;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Left Container - Business Types & Services (Transparent Background) */
+.left-container {
+  flex: 0 0 40%;
+  background: transparent;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.tags-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tag-group-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #002130;
+  margin: 0;
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Business Type Tags - Accent Colors */
+.business-type-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #002130;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.business-type-tag:nth-child(1) { background: #FFE4E1; }
+.business-type-tag:nth-child(2) { background: #E1F5FE; }
+.business-type-tag:nth-child(3) { background: #F3E5F5; }
+.business-type-tag:nth-child(4) { background: #E8F5E8; }
+.business-type-tag:nth-child(5) { background: #FFF3E0; }
+.business-type-tag:nth-child(6) { background: #F0F4FF; }
+.business-type-tag:nth-child(7) { background: #FFEAA7; }
+.business-type-tag:nth-child(8) { background: #DDD6FE; }
+
+/* Service Tags - EDF3F4 Background */
+.service-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #002130;
+  background: #EDF3F4;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Right Container - Profile & Review (EDF3F4 Background) */
+.right-container {
+  flex: 0 0 60%;
+  background: #EDF3F4;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #002130;
+  margin: 0 0 4px 0;
+}
+
+.profile-position {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #7A8B95;
+  margin: 0;
+}
+
+.review-section {
+  display: flex;
+  align-items: flex-end;
+}
+
+.review-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #002130;
+  margin: 0;
+}
+
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #D1D9DD;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #002130;
+}
+
+.dot:hover {
+  background: #7A8B95;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 20px;
   }
-  .testimonial-quote {
-    font-size: 18px;
+
+  .testimonials-header {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 40px;
   }
-  .testimonial-avatar {
-    width: 64px;
-    height: 64px;
+
+  .title-line-1,
+  .title-line-2 {
+    font-size: 32px;
   }
-  .testimonial-name {
+
+  .testimonials-nav {
+    align-self: flex-end;
+  }
+
+  .nav-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .testimonials-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .left-container,
+  .right-container {
+    flex: 1;
+  }
+
+  .left-container {
+    padding: 20px;
+    order: 2;
+  }
+
+  .right-container {
+    padding: 20px;
+    min-height: auto;
+    order: 1;
+  }
+
+  .tags-section {
+    gap: 20px;
+  }
+
+  .tags-wrapper {
+    gap: 6px;
+  }
+
+  .business-type-tag,
+  .service-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .review-text {
     font-size: 16px;
   }
-  .testimonial-role {
-    font-size: 13px;
+
+  .testimonials-dots {
+    margin-top: 32px;
   }
 }

@@ -41,6 +41,7 @@
     flex-direction: column;
     padding: 32px 24px;
     height: 60vh;
+    max-height: 600px;
 
   }
   

@@ -12,18 +12,23 @@ import {
 export default function Footer() {
     return (
         <footer className="footer-section">
+            <div className="footer-border-gradient"></div>
+
             <div className="footer-content">
+
                 {/* Left side */}
                 <div className="footer-left">
-                    <div className="footer-logo">
-                        {/* SVG logo can remain an <img> */}
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/images/Fixmypresence-logo.svg" alt="fixmypresence logo" />
+
+                    <div className="fmp-holder1">
+                        <div className="footer-logo">
+                            <img src="/images/Fixmypresence-logo.svg" alt="fixmypresence logo" />
+                        </div>
+                        <p className="tagline">
+                            we design your first impression—website, brand
+                            identity, and everything in between.
+                        </p>
                     </div>
-                    <p className="tagline">
-                        we design your first impression—website, brand
-                        identity, and everything in between.
-                    </p>
+
 
                     <div className="socials">
                         <h4>Socials:</h4>
@@ -34,7 +39,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <FaLinkedin className="social-icon" />
+                                    {/* <FaLinkedin className="social-icon" /> */}
                                     LinkedIn
                                 </a>
                             </li>
@@ -44,7 +49,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <FaTwitter className="social-icon" />
+                                    {/* <FaTwitter className="social-icon" /> */}
                                     X/Twitter
                                 </a>
                             </li>
@@ -54,7 +59,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <FaInstagram className="social-icon" />
+                                    {/* <FaInstagram className="social-icon" /> */}
                                     Instagram
                                 </a>
                             </li>
@@ -64,71 +69,32 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <FaBehance className="social-icon" />
+                                    {/* <FaBehance className="social-icon" /> */}
                                     Behance
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-                {/* Right side: call card */}
-                <div className="footer-right">
-                    <div className="call-card">
-                        <div className="call-top">
-                            <Image
-                                src="/images/Paul-lamain.png"
-                                alt="Tony"
-                                className="avatar"
-                                width={64}
-                                height={64}
-                            />
-
-                            <h3 className="call-title">Book an intro call</h3>
-                            <p className="call-text">
-                                Time to get introduced and explore how fixmypresence can help.
-                            </p>
-
-                            <button
-                                className="homepage-button homepage-button-secondary"
-                                id="call-button"
-                            >
-                                <span>
-                                    <div className="homepage-arrow-wrapper">
-                                        <div className="homepage-arrow">
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
-                                                src="/icons/call.svg"
-                                                alt="Call Icon"
-                                                width="17"
-                                                height="17"
-                                            />
-                                        </div>
-                                    </div>
-                                    Book a call
-                                </span>
-                            </button>
-                        </div>
-
-                        <div className="call-email">
-                            <Mail size={20} className="call-email-icon" />
-                            <div className="call-email-text">
-                                <p>Do you prefer email communication?</p>
-                                <p>
-                                    Have it:{' '}
-                                    <a href="mailto:tony@fixmypresence.com">
-                                        tony@fixmypresence.com
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div className="footer-bottom">
                 <p className="footer-copyright">© 2025 fixmypresence</p>
+                <a href="/privacy" className="footer-privacy">Legal</a>
                 <a href="/privacy" className="footer-privacy">privacy policy</a>
+            </div>
+
+            {/* Line Illustration */}
+            <div className="footer-illustration">
+
+                <img src="/images/footer-ill_.png" alt="" />
+                {/* <Image 
+                        src="/images/footer-ill.png" 
+                        alt="Footer line illustration"
+                        width={1920}
+                        height={100}
+                        className="footer-lines-image"
+                    /> */}
             </div>
         </footer>
     )

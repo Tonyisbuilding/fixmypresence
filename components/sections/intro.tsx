@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const YOUTUBE_ID = 'r-iETptU7JY';
 const YOUTUBE_THUMB = `https://img.youtube.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`;
-const YOUTUBE_EMBED = `https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`;
+const YOUTUBE_EMBED = "/images/Coming-soon-vid.mp4";
 
 const Intro = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -40,7 +40,7 @@ const Intro = () => {
 
   return (
     <section ref={sectionRef} className="intro-section">
-      <div className="intro-content-wrapper">
+      <div className=" container intro-content-wrapper">
         {/* Text & Section Title */}
         <div className="intro-text-section">
           <div className="section-title section-title01">
@@ -134,31 +134,32 @@ const Intro = () => {
           {/* YouTube Video */}
           <div className="video-section">
             <div className="video-container">
-              {isVideoPlaying ? (
-                <iframe
-                  className="intro-video"
-                  src={YOUTUBE_EMBED}
-                  frameBorder="0"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  title="Intro Video"
-                />
-              ) : (
-                <div
-                  className="video-overlay"
-                  onClick={() => setIsVideoPlaying(true)}
-                >
-                  {/* blurred thumbnail */}
+              {/* Video always mounts; overlay just sits on top until clicked */}
+              <video
+                className="intro-video"
+                src="/images/Coming-soon-vid.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls={false}
+                poster="/images/thumbnail-fmp.png"   // optional poster
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+
+              {/* overlay to show play UI; click just hides it */}
+              {!isVideoPlaying && (
+                <div className="video-overlay" onClick={() => setIsVideoPlaying(true)}>
                   <Image
                     className="video-thumb"
-                    src={YOUTUBE_THUMB}
-                    alt="Video thumbnail"
+                    src="/images/thumbnail-fmp.png"
+                    alt="Watch our 5-min intro video"
                     fill
                     sizes="100vw"
                     priority
+                    style={{ objectFit: "cover" }}
                   />
 
-                  {/* play button + info on top */}
                   <div className="play-pill">
                     <div className="pill-icon">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
@@ -170,11 +171,11 @@ const Intro = () => {
                       <span>5 mins · Play video</span>
                     </div>
                   </div>
-
                 </div>
               )}
             </div>
           </div>
+
 
         </div>
       </div>

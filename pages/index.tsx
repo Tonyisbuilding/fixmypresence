@@ -13,6 +13,7 @@ import TestimonialSection from "@/components/sections/testimonials";
 import PricingSection, { Plan } from "@/components/sections/pricing";
 import PaymentModal from "@/components/paymentmodal";
 import Footer from "@/components/sections/footer";
+import FAQ from "@/components/sections/faqs";
 
 
 export default function Home() {
@@ -45,12 +46,9 @@ export default function Home() {
           brief={brief}
           onBriefChange={setBrief}
           onGetStarted={() => {
-            if (!brief.trim()) {
-              alert("Please enter your website URL or project brief first.");
-              return;
-            }
-            scrollToPricing();
-          }}
+  scrollToPricing();
+}}
+
         />
       </section>
 
@@ -90,11 +88,16 @@ export default function Home() {
       <section id="testimonials">
         <TestimonialSection />
       </section>
+      {/* Contact / Footer */}
+      <section id="FAQ">
+        <FAQ />
+      </section>
 
       {/* Contact / Footer */}
       <section id="contact">
         <Footer />
       </section>
+
 
       {/* Payment Modal */}
       {chosenPlan && (

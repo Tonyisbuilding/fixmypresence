@@ -31,7 +31,7 @@ const ProcessSection = () => {
     <section className="process-section">
       {/* Section Header (reuses services-badge & section-title styles) */}
       <div className="section-header">
-        <span className="services-badge">process</span>
+        <span className="services-badge">Process</span>
         <h2 className="section-title">
           Our process is designed to <br />
           save your time

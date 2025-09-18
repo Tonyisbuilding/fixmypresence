@@ -1,21 +1,14 @@
 // next.config.ts
-import type { NextConfig } from "next";
-
-const isDev = process.env.NODE_ENV === "development";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["img.youtube.com"],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'img.youtube.com', pathname: '/vi/**' },
+      { protocol: 'https', hostname: 'i.ytimg.com',  pathname: '/vi/**' }, // alt YouTube CDN
+    ],
   },
-  ...(isDev
-    ? {
-        webpackDevMiddleware: (config: any) => {
-          config.watchOptions = { poll: 1200, aggregateTimeout: 300 };
-          return config;
-        },
-      }
-    : {}),
 };
 
 export default nextConfig;

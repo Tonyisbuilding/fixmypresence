@@ -1,0 +1,349 @@
+/* ===========================
+   HERO (standardized)
+   =========================== */
+
+/* spacing tokens (nav height differs by breakpoint) */
+:root {
+  --nav-space: 88px;             /* mobile nav height (you set this earlier) */
+  --hero-max: 1280px;            /* content width inside hero */
+  --hero-radius: 80px;           /* desktop rounded corners */
+  --hero-radius-sm: 40px;        /* mobile rounded corners */
+}
+
+@media (min-width: 768px) {
+  :root { --nav-space: 72px; }
+}
+
+
+/* container */
+.homepage-hero {
+  position: relative;
+  width: 100%;
+  max-width: 1940px;             /* your overall page cap */
+  margin: 0 auto;
+
+  /* make room for fixed nav without using random % margins */
+  padding: clamp(32px, 4vw, 48px) 24px 140px;
+  padding-top: calc(clamp(48px, 8vw, 96px) + var(--nav-space));
+
+  /* full-viewport feel without trapping small screens */
+  min-height: calc(100svh - var(--nav-space));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(180deg, #D7E4E7 0%, #EDF3F4 100%);
+
+}
+
+
+.hero-main-1 {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* inner max width for text/controls */
+.homepage-hero > * {
+  max-width: var(--hero-max);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* title & subtitle */
+.homepage-hero-title {
+  margin: 0 0 12px;
+  color: #053D4D;
+font-size: clamp(38px, 5vw, 72px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 1000px;
+}
+
+.homepage-hero-subtitle {
+  margin: 8px auto 20px;
+  color: rgba(5,61,77,1);
+  font-size: clamp(15px, 1.2vw + 10px, 18px);
+  line-height: 1.6;
+  max-width: 880px;
+}
+
+/* input + buttons */
+.homepage-input-section { width: 100%; max-width: 780px; margin: 0 auto 16px; }
+
+.homepage-url-input {
+  width: 100%;
+  height: clamp(52px, 6vw, 64px);
+  font-size: clamp(15px, 1vw + 10px, 16px);
+  padding: 0 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(41,67,76,0.2);
+  background: rgba(248,249,255,1);
+  color: #5a6c7d;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.homepage-url-input:focus {
+  border-color: #2c5aa0;
+  box-shadow: 0 0 0 3px rgba(44,90,160,0.1);
+}
+.homepage-url-input::placeholder { color: #95a5a6; }
+
+.homepage-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto 16px;
+}
+
+
+.homepage-button,
+.homepage-button-secondary {
+  height: clamp(50px, 5.5vw, 56px);
+  min-width: clamp(100%, 40vw, 220px);
+  padding: 0 24px;
+  font-size: clamp(15px, 1vw + 10px, 16px);
+  border-radius: 12px;
+}
+
+/* Button Styles - Custom Design */
+.Hero-btn-pry {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 65%;
+  max-width: 487.5px;
+  /* height: 70px; */
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #1c3a48, #24505d);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  /* padding: 10px; */
+}
+
+.homepage-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/Link.png") repeat;
+  opacity: 100%;
+  pointer-events: none;
+  background-size: 80px 80px;
+}
+
+.homepage-button span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.homepage-arrow-wrapper {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.8) 13%,
+    rgba(0, 61, 82, 1) 53%
+  );
+  border-radius: 50%;
+  padding: 2px;
+  display: inline-flex;
+  margin-left: 8px;
+}
+
+.homepage-arrow {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fcfcfc;
+  border-radius: 50%;
+  position: relative;
+  color: black;
+}
+
+/* Secondary button variant */
+.Hero-btn-sec {
+  background: linear-gradient(to right, #1c3a48, #24505d);
+  max-width: 262.5px;
+  width: 35%;
+font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  height: 70px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #1c3a48, #24505d);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.homepage-submission-note {
+  font-size: 16px;
+  color: #001a26;
+  margin-top: 4px;
+  margin-bottom: 60px;
+}
+
+/* marquee */
+.logo-marquee {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 54px;
+  width: 100%;
+  text-align: center;
+}
+.marquee-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 16px;
+}
+.marquee {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.marquee__inner {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marqueeAnim 20s linear infinite;
+}
+.marquee-logo {
+  flex: 0 0 auto;
+  margin: 0 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  opacity: .9;
+  filter: grayscale(100%);
+  transition: opacity .3s, filter .3s;
+}
+.marquee-logo:hover { opacity: 1; filter: none; }
+
+@keyframes marqueeAnim {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ===========================
+   MOBILE TWEAKS
+   =========================== */
+@media (max-width: 767px) {
+  .homepage-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10% 16px 48px; */
+    min-height: auto;
+    height: 110vh;
+        max-height: 780px; /* good balance */
+
+  }
+
+  .homepage-hero-title {
+  font-size: clamp(26px, 7vw, 40px); /* balanced scale */
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .homepage-hero-subtitle {
+    font-size: 15px;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .homepage-url-input {
+    height: 56px;
+    font-size: 15px;
+    padding: 0 16px;
+  }
+
+  .homepage-button-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .Hero-btn-pry, .Hero-btn-sec {
+    width: 100%;
+    max-width: none;
+    min-height: 50px;
+  }
+
+  .Hero-btn-pry {
+    height: 60px;
+  }
+
+    .Hero-btn-sec {
+    height: 60px;
+  }
+
+
+  .homepage-submission-note { font-size: 12px; }
+
+  .marquee { max-width: 88%; }
+  .marquee-text { font-size: 12px; }
+  .marquee__inner { animation-duration: 15s; }
+  .marquee-logo { margin: 0 20px; }
+}
+
+
+
+/* Small phones (Galaxy S20, iPhone 12, etc.) */
+@media (max-width: 390px) {
+  .homepage-hero {
+    padding: 20% 16px 40px;
+  }
+
+
+    .homepage-hero-title {
+    font-size: clamp(25px, 6vw, 34px); /* Reduced range */
+    /* margin-bottom: 8px; */
+  }
+
+    .homepage-hero-subtitle {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+}
+
+/* Medium phones (Galaxy S20+, larger iPhones) */
+@media (min-width: 391px) and (max-width: 428px) {
+  .homepage-hero {
+    padding: 75px 18px 45px;
+  }
+}
+

@@ -37,6 +37,8 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+   transform-style: preserve-3d; /* Enable 3D space */
+    perspective: 1000px; /* Add perspective */
 }
 
 /* Service Cards */
@@ -45,6 +47,10 @@
     border: 1px solid transparent;
     border-radius: 16px;
     overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        transform-origin: center top; /* Scale from top center */
+
   
     /* two stacked backgrounds:
        1) your light fill-gradient clipped inside the padding-box
@@ -60,36 +66,11 @@
     */
     background-origin: padding-box, border-box;
     background-clip:  padding-box, border-box;
+    position: sticky; /* stack on scroll */
+    top: var(--stick-top, 96px);
   }
   
-.service-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;           /* top:0; right:0; bottom:0; left:0 */
-    padding: 2px;       /* == your border width */
-    border-radius: 16px;
-    border: 2px solid;       /* stroke thickness */
-   
-    pointer-events: none;
-    z-index: -1;
-  }
 
-/* .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
-    border-radius: 16px;
-    padding: 2px;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: xor;
-    -webkit-mask-composite: xor;
-    z-index: -1;
-  }
-   */
 
 /* Card Content */
 .card-content {
@@ -113,7 +94,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.card-description {
+.card-description00 {
   font-size: 22px;
   line-height: 1.6;
   color: #002130;
@@ -161,7 +142,7 @@
 .card-images img {
   width: 300px;
   height: 180px;
-  object-fit: cover;
+  /* object-fit: cover; */
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -191,7 +172,7 @@
     font-size: 28px;
   } */
 
-  .card-description {
+  .card-description00 {
     font-size: 16px;
   }
 
@@ -225,11 +206,70 @@
     line-height: 1.5;
     color: #002130;
     margin-bottom: 12px;
-    position: relative;
     padding-left: 24px;
     font-weight: 400;
   
   }
+
+/* Services Grid - Ensure proper container */
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  /* Important: Add min-height for sticky to work */
+  min-height: 200vh; /* Adjust based on your content */
+}
+
+.service-card {
+  
+  /* Your existing styles... */
+  position: sticky;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CORRECTED: First card should have highest z-index */
+/* .services-grid .service-card:nth-child(1) {
+  top: 750px;  
+  z-index: 3;  
+} */
+
+/* .services-grid .service-card:nth-child(2) {
+  top: calc(var(--stick-top) + var(--stack-step));
+  z-index: 8;
+} */
+.services-grid .service-card:nth-child(3) {
+  top: calc(var(--stick-top) + var(--stack-step) * 2);
+  z-index: 7;
+}
+/* Add a few more in case more cards are added */
+.services-grid .service-card:nth-child(4) {
+  top: calc(var(--stick-top) + var(--stack-step) * 3);
+  z-index: 6;
+}
+.services-grid .service-card:nth-child(5) {
+  top: calc(var(--stick-top) + var(--stack-step) * 4);
+  z-index: 5;
+}
+.services-grid .service-card:nth-child(6) {
+  top: calc(var(--stick-top) + var(--stack-step) * 5);
+  z-index: 4;
+}
+
+/* Responsive tuning for stacking spacing */
+@media (max-width: 1024px) {
+  .services-grid {
+    --stick-top: 80px;
+    --stack-step: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    --stick-top: 64px;
+    --stack-step: 28px;
+  }
+}
 
   .section-title {
     font-size: 22px !important;
@@ -251,3 +291,34 @@
     font-size: 24px;
   }
 }
+
+
+/* --- Stacking cards on scroll (no markup changes) --- */
+@media (min-width: 768px) { /* enable on tablet/desktop; remove if you want it on mobile too */
+  .services-grid { position: relative; }
+
+  /* Make each card stick as you scroll */
+  .service-card {
+    position: sticky;
+    top: var(--stack-top, 72px); /* base pin distance from top */
+    z-index: 1;                  /* will be overridden per card below */
+  }
+
+  /* Offset and z-index per card so they “pile up” nicely */
+  .service-card:nth-child(1) { --stack-top: 100px;  z-index: 1;
+      transform: scale(1); /* Full size */
+
+  }
+  .service-card:nth-child(2) { --stack-top: 125px; z-index: 2;       transform: scale(1.02); /* Full size */
+}
+  .service-card:nth-child(3) { --stack-top: 150px; z-index: 3;       transform: scale(1.03); /* Full size */
+}
+  .service-card:nth-child(4) { --stack-top: 168px; z-index: 4; }
+  /* If you add more cards later, continue the pattern by +32px */
+  /* .service-card:nth-child(5) { --stack-top: 200px; z-index: 5; } */
+}
+
+/* (Optional) If your header is sticky, add its height so cards sit below it:
+   Replace 72px above with calc(<your-sticky-header-height> + 16px)
+   e.g., top: calc(64px + 16px);
+*/

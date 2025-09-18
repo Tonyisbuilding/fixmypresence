@@ -88,7 +88,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onChoosePlan }) => {
             </div>
 
             <div className="card-footer">
-              <p className="delivery-text">Get your project delivered in 2-3 weeks</p>
+              {/* <p className="delivery-text">Average timeline: 2-3 weeks</p> */}
               <button
                 className="get-started-btn"
                 onClick={() => onChoosePlan({ name: 'Lite', amount: totalLite })}
@@ -146,7 +146,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onChoosePlan }) => {
             </div>
 
             <div className="card-footer">
-              <p className="delivery-text">Get your project delivered in 2-3 weeks</p>
+              {/* <p className="delivery-text">Average timeline: 2-3 weeks</p> */}
               <button
                 className="get-started-btn"
                 onClick={() => onChoosePlan({ name: 'Pro', amount: totalPro })}
@@ -255,7 +255,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onChoosePlan }) => {
                 <div className="option-row">
                   <div className="option-left">
                     <span className="option-icon">→</span>
-                    <span className="option-text">Full time attention (up to 10 weeks)</span>
+                    <span className="option-text">Full time attention (up to 5 weeks)</span>
                   </div>
                   <div className="option-right">
                     <div
@@ -270,7 +270,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onChoosePlan }) => {
             </div>
 
             <div className="card-footer">
-              <p className="delivery-text">Get your project delivered in 2-3 weeks</p>
+              {/* <p className="delivery-text">Average timeline: 2-3 weeks</p> */}
 
 
               <button
