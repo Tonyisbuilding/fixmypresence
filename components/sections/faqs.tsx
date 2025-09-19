@@ -94,25 +94,31 @@ export default function FAQSection() {
                                 Time to get introduced and explore how fixmypresence can help.
                             </p>
 
-                            <button className="book-call-button">
+                            <a
+                                className="book-call-button"
+                                href="https://calendly.com/thisboyisbuilding/introductory-call"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <span>
                                     <div className="homepage-arrow-wrapper">
                                         <div className="homepage-arrow">
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
+                                            <Image
                                                 src="/icons/call.svg"
-                                                alt="Call Icon"
-                                                width="17"
-                                                height="17"
+                                                alt="Call icon"
+                                                width={17}
+                                                height={17}
                                             />
                                         </div>
                                     </div>
                                 </span>
                                 Book a call
-                            </button>
+                            </a>
 
                             <div className="email-section">
-                                <span className="email-icon"><img src="/icons/mail.svg" alt="" /></span>
+                                <span className="email-icon">
+                                    <Image src="/icons/mail.svg" alt="Mail icon" width={20} height={20} />
+                                </span>
                                 <div className="email-text">
                                     <p className="email-label">Prefer email communication?</p>
                                     <p className="email-address">

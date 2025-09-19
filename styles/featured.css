@@ -69,7 +69,8 @@
 .projects-flex-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+  margin-top: 6px;
   max-width: 1920px;
   width: 95%;
 }
@@ -104,6 +105,10 @@
   border-radius: 16px;
   min-height: 500px;
   flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.mobile-project-toggle {
+  display: none;
 }
 
 @media (min-width: 1920px) {
@@ -164,11 +169,24 @@
   border-radius: 4px;
 }
 
+.company-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  background-color: #E6F7FF;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
 .overlay-company {
   font-family: 'Haas Grot Text Trial', sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #E6F7FF;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -247,6 +265,11 @@
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++Mobile view++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 @media (max-width: 768px) {
+  .featured-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .cwrap {
     display: flex;
     flex-direction: column;
@@ -257,7 +280,7 @@
     display: flex !important;
     flex-direction: column;
     gap: 24px;
-    margin-top: 24px;
+    margin-top: -10px;
   }
 
   .projects-sub-container {
@@ -270,11 +293,43 @@
     border-radius: 16px;
     width: 100% !important; /* Override flex width classes on mobile */
     height: auto !important; /* Allow card to expand based on content */
+    min-height: auto;
     display: flex;
     flex-direction: column;
     background: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: visible; /* Allow content to be visible */
+  }
+
+  .mobile-project-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    width: 100%;
+    border: 1px solid rgba(7, 62, 78, 0.12);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    background: #ffffff;
+    color: #002130;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mobile-project-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-project-toggle[aria-expanded="true"] .mobile-project-icon {
+    transform: rotate(180deg);
+  }
+
+  .mobile-project-label {
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   .project-card:hover .project-image {
@@ -283,9 +338,24 @@
 
   .project-image {
     border-radius: 16px 16px 0 0;
-    height: 200px !important; /* Fixed height for mobile images */
     width: 100% !important;
     position: relative !important; /* Change from absolute positioning */
+    height: 220px !important;
+    object-fit: contain !important;
+    background: #ffffff;
+  }
+
+  .project-card.flex-card-35 .project-image,
+  .project-card.flex-card-40 .project-image {
+    height: 200px !important;
+    object-fit: cover !important;
+    background: transparent;
+  }
+
+  .project-card.flex-card-65 .project-image,
+  .project-card.flex-card-60 .project-image {
+    object-fit: cover !important;
+    height: 240px !important;
   }
 
   .project-overlay {
@@ -295,10 +365,14 @@
     height: auto !important;
     background: #ffffff !important;
     backdrop-filter: none !important;
-    display: block !important;
+    display: none !important;
     padding: 0 !important;
     margin: 0 !important;
     border-radius: 0 0 16px 16px;
+  }
+
+  .project-overlay.is-expanded {
+    display: block !important;
   }
 
   .overlay-content {
@@ -323,11 +397,11 @@
   }
 
   .company-icon {
-    color: rgba(0, 33, 48, 0.6);
+    background-color: #206A7C;
   }
 
   .overlay-company {
-    color: rgba(0, 33, 48, 0.6);
+    color: #206A7C;
     font-size: 14px;
   }
 

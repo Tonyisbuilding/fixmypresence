@@ -22,22 +22,21 @@
   flex: 1;
 }
 
-.title-line-1 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 1.2;
-  color: #002130;
-  margin: 0;
-}
-
+.title-line-1,
 .title-line-2 {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 1.2;
-  color: #7A8B95;
   margin: 0;
+}
+
+.title-line-1 {
+  color: #002130;
+}
+
+.title-line-2 {
+  color: #7A8B95;
 }
 
 .testimonials-nav {
@@ -249,7 +248,7 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .testimonials-section {
-    padding: 60px 20px;
+    padding: 40px 10px;
   }
 
   .testimonials-header {
@@ -261,11 +260,15 @@
 
   .title-line-1,
   .title-line-2 {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .testimonials-nav {
     align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    display: none;
   }
 
   .nav-button {
@@ -281,7 +284,7 @@
   .testimonial-card {
     flex-direction: column;
     min-height: auto;
-    padding: 20px;
+    padding: 10px;
   }
 
   .left-container,

@@ -300,13 +300,12 @@
   /* Make each card stick as you scroll */
   .service-card {
     position: sticky;
-    top: var(--stack-top, 72px); /* base pin distance from top */
+    top: var(--stack-top, 72px); 
     z-index: 1;                  /* will be overridden per card below */
   }
 
-  /* Offset and z-index per card so they “pile up” nicely */
   .service-card:nth-child(1) { --stack-top: 100px;  z-index: 1;
-      transform: scale(1); /* Full size */
+      transform: scale(1); 
 
   }
   .service-card:nth-child(2) { --stack-top: 125px; z-index: 2;       transform: scale(1.02); /* Full size */
@@ -314,8 +313,14 @@
   .service-card:nth-child(3) { --stack-top: 150px; z-index: 3;       transform: scale(1.03); /* Full size */
 }
   .service-card:nth-child(4) { --stack-top: 168px; z-index: 4; }
-  /* If you add more cards later, continue the pattern by +32px */
-  /* .service-card:nth-child(5) { --stack-top: 200px; z-index: 5; } */
+
+}
+
+@media (max-width: 767px) {
+  .service-card:nth-child(1) { --stack-top: 180px !; }
+  .service-card:nth-child(2) { --stack-top: 150px; }
+  .service-card:nth-child(3) { --stack-top: 180px; }
+  .service-card:nth-child(4) { --stack-top: 210px; }
 }
 
 /* (Optional) If your header is sticky, add its height so cards sit below it:

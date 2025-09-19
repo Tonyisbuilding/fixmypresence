@@ -167,6 +167,102 @@ body {
   font-family: inherit;
 }
 
+.modal-choice,
+.modal-confirmation {
+  text-align: center;
+}
+
+.modal-choice-message,
+.modal-confirmation-message {
+  font-size: 1rem;
+  color: #374151;
+  margin: 0 0 24px;
+}
+
+.modal-choice-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.modal-choice-footer {
+  margin-top: 8px;
+}
+
+.modal .contact-btn {
+  background: transparent;
+  color: #1F2937;
+  border: 1px solid #CBD5E1;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.contact-btn {
+  background-color: #053D4D !important;
+  
+}
+
+.modal .contact-btn:hover {
+  background: #F1F5F9;
+}
+
+.modal-error {
+  margin: 8px 0 0;
+  color: #B91C1C;
+  font-size: 0.9rem;
+}
+
+.csr-coming-soon {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.csr-card {
+  background: #F1F9FB;
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 640px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(7, 62, 78, 0.12);
+}
+
+.csr-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #073E4E;
+  margin-bottom: 16px;
+}
+
+.csr-message {
+  font-size: 1.1rem;
+  color: #1F2937;
+  margin-bottom: 12px;
+}
+
+.csr-subtext {
+  font-size: 1rem;
+  color: #475569;
+  margin: 0;
+}
+
+.csr-link {
+  color: #0F6D9A;
+  text-decoration: underline;
+}
+
+.csr-link:hover {
+  color: #084b6b;
+}
+
 /* Title */
 .modal-title {
   margin: 0 0 16px;
@@ -215,11 +311,11 @@ body {
   margin-bottom: 24px;
 }
 .pay-now-btn {
-  background: #2D5A87;
-  color: #FFFFFF;
+  background: #053D4D !important;
+  color: #FFFFFF !important;
   border: none;
   padding: 8px 20px;
-  border-radius: 6px;
+  border-radius: 10px !important;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
@@ -293,11 +389,11 @@ body {
   gap: 12px;
 }
 .primary-btn {
-  background: #2D5A87;
-  color: #FFFFFF;
+  background: #053D4D !important;
+  color: #FFFFFF !important;
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 13px 26px !important;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
@@ -316,6 +412,18 @@ body {
 }
 .cancel-btn:hover {
   background: #F1F5F9;
+}
+
+@media (max-width: 600px) {
+  .modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal-footer .primary-btn,
+  .modal-footer .cancel-btn {
+    width: 100%;
+  }
 }
 
 
@@ -354,6 +462,3 @@ body {
   border-radius: 6px;
   line-height: 1;
 }
-
-
-

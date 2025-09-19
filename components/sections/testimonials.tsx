@@ -24,30 +24,30 @@ const testimonials = [
     },
     {
         id: 3,
-        name: "Sarah Johnson",
-        position: "Founder at TechStart",
-        avatar: "/images/sarah-johnson.jpg",
-        testimonial: "Working with Tony was a game-changer for our startup. His strategic approach to design thinking helped us clarify our brand message and create visuals that truly resonate with our target audience. The results exceeded our expectations.",
+        name: "Mero Maj",
+        position: "CMO at NextJump.io",
+        avatar: "/images/person.png",
+        testimonial: "Partnering with Tony was a game-changer for NextJump.io. He quickly understood our vision, sharpened our messaging, and delivered a site that speaks directly to our audience. Professional, efficient, and impactful.",
         businessTypes: ["Brand identity", "UI/UX design", "Marketing materials", "Pitch deck design"],
-        servicesOffered: ["Startup", "B2B", "SaaS", "Technology", "For-profit"]
+        servicesOffered: ["Coaching", "B2C", "Edtech",  "For-profit"]
     },
     {
         id: 4,
-        name: "Michael Chen",
-        position: "Marketing Director at InnovaCorp",
-        avatar: "/images/michael-chen.jpg",
-        testimonial: "Tony's attention to detail and ability to translate complex ideas into compelling visual stories is remarkable. He managed our complete rebrand with professionalism and delivered results that significantly improved our market positioning.",
+        name: "Aron Broeken",
+        position: "General manager at EdgeNext",
+        avatar: "/images/Aron.png",
+        testimonial: "Working with Tony was seamless. His team not only redesigned our website but also refreshed all our key documents to align with our new brand direction. The result was a clear, consistent identity that communicates our value with confidence. Their attention to detail and collaborative approach made the entire process smooth and impactful.",
         businessTypes: ["Complete rebrand", "Website overhaul", "Marketing campaigns", "Print design"],
-        servicesOffered: ["Corporation", "B2B", "Manufacturing", "Enterprise", "For-profit"]
+        servicesOffered: ["Corporation", "B2B", "Enterprise", "For-profit"]
     },
     {
         id: 5,
-        name: "Emily Rodriguez",
-        position: "CEO at GreenTech Solutions",
-        avatar: "/images/emily-rodriguez.jpg",
-        testimonial: "The collaborative process with Tony was seamless. He understood our sustainability mission and created designs that perfectly captured our values while appealing to our eco-conscious audience. Highly recommend!",
+        name: "Shaayak Chatterjee",
+        position: "Founder of Breathe ESG",
+        avatar: "/images/esgf.png",
+        testimonial: "Tony and his team designed our entire product system and website end-to-end. They grasped our goals fast and delivered a clean, scalable experience that our customers love.",
         businessTypes: ["Sustainability branding", "Web design", "Content strategy", "Social media"],
-        servicesOffered: ["B2C", "Environmental", "Clean Tech", "LLC", "For-profit"]
+        servicesOffered: ["B2B", "Environmental", "Clean Tech", "LLC", "For-profit"]
     }
 ]
 

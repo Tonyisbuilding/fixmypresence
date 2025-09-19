@@ -237,10 +237,15 @@ align-items: start;
 /* Mobile Styles */
 @media (max-width: 768px) {
   .faq-section {
-    padding: 60px 20px;
+    padding: 30px 10px;
   }
 
   .faq-container {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .faq-cta {
+    display: flex ;
     flex-direction: column;
     gap: 40px;
   }
@@ -252,8 +257,8 @@ align-items: start;
   }
 
   .faq-title {
-    font-size: 32px;
-    margin-bottom: 32px;
+    font-size: 24px;
+    margin-bottom: 25px;
   }
 
   .question-text {

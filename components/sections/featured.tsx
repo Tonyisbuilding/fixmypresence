@@ -1,220 +1,178 @@
 // components/FeaturedProjectsSection.tsx
-import React from 'react'
-import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
-const projects = [
-    {
-        id: 1,
-        image: '/images/prj.png',
-        alt: 'Edge Capital Brand Refresh',
-        company: 'Edge Capital Management B.V',
-        description1: 'Edge Capital needed a cohesive brand presence that aligned their website and investor documents with the firm’s quantitative investment focus.',
-        description2: 'We introduced a new brand direction, redesigned their website, and refined their key documents—creating a consistent identity that communicates clarity and trust to stakeholders.',
-        services: ['Web Design', 'Brand', 'Development'],
-        link: 'https://www.behance.net/tonyisbuilding',
-    },
-    {
-        id: 2,
-        image: '/images/prj1.png',
-        alt: 'Bulwark project',
-        company: 'Bulwark',
-        description1: 'Bulwark wanted to unify their brand representation and refine their direction for a stronger market presence.',
-        description2: 'We refreshed their identity and applied it across digital and print, creating a consistent brand that communicates trust.',
-        services: ['Brand Identity', 'Web Design'],
-        link: 'https://www.behance.net/tonyisbuilding',
-    },
-    {
-        id: 3,
-        image: '/images/prj2.png',
-        alt: '913.ai project',
-        company: 'Spenviro sustainability initiative',
-        description1: 'Spenviro set out to connect sustainability efforts with a platform that unifies individuals and solutions.',
-        description2: 'We designed and developed a digital space that reflects their mission and empowers collaboration for lasting impact.',
-        services: ['Brand Identity', 'Platform Design'],
-        link: 'https://www.behance.net/tonyisbuilding',
-    },
-    {
-        id: 4,
-        image: '/images/lalourde.png',
-        alt: 'Lalourde project',
-        company: 'Lalourde.fr',
-        description1: 'Lalourde, a French flush door manufacturer, needed a modern online presence to showcase their craftsmanship and make their products accessible to a wider audience.',
-        description2: 'We designed and developed their website from the ground up—including copywriting—resulting in a clear, professional platform that communicates quality and strengthens their visibility.',
-        services: ['UX Design', 'Branding'],
-        link: 'https://www.behance.net/tonyisbuilding',
-    },
-]
+type Project = {
+  id: number;
+  image: string;
+  alt: string;
+  company: string;
+  description1: string;
+  description2: string;
+  services: string[];
+  link: string;
+  icon: string;
+};
 
-export default function FeaturedProjectsSection() {
+const projects: Project[] = [
+  {
+    id: 1,
+    image: '/images/prj.png',
+    alt: 'Edge Capital Brand Refresh',
+    company: 'Edge Capital Management B.V',
+    description1:
+      'Edge Capital needed a cohesive brand presence that aligned their website and investor documents with the firm’s quantitative investment focus.',
+    description2:
+      'We introduced a new brand direction, redesigned their website, and refined their key documents—creating a consistent identity that communicates clarity and trust to stakeholders.',
+    services: ['Web Design', 'Brand', 'Development'],
+    link: 'https://www.behance.net/tonyisbuilding',
+    icon: '/icons/finance.svg',
+  },
+  {
+    id: 2,
+    image: '/images/prj1.png',
+    alt: 'Bulwark project',
+    company: 'Bulwark',
+    description1:
+      'Bulwark wanted to unify their brand representation and refine their direction for a stronger market presence.',
+    description2:
+      'We refreshed their identity and applied it across digital and print, creating a consistent brand that communicates trust.',
+    services: ['Brand Identity', 'Web Design'],
+    link: 'https://www.behance.net/tonyisbuilding',
+    icon: '/icons/insurance.svg',
+  },
+  {
+    id: 3,
+    image: '/images/prj2.png',
+    alt: '913.ai project',
+    company: 'Spenviro sustainability initiative',
+    description1:
+      'Spenviro set out to connect sustainability efforts with a platform that unifies individuals and solutions.',
+    description2:
+      'We designed and developed a digital space that reflects their mission and empowers collaboration for lasting impact.',
+    services: ['Brand Identity', 'Platform Design'],
+    link: 'https://www.behance.net/tonyisbuilding',
+    icon: '/icons/deforestation.svg',
+  },
+  {
+    id: 4,
+    image: '/images/lalourde.png',
+    alt: 'Lalourde project',
+    company: 'Lalourde.fr',
+    description1:
+      'Lalourde, a French flush door manufacturer, needed a modern online presence to showcase their craftsmanship and make their products accessible to a wider audience.',
+    description2:
+      'We designed and developed their website from the ground up—including copywriting—resulting in a clear, professional platform that communicates quality and strengthens their visibility.',
+    services: ['UX Design', 'Branding'],
+    link: 'https://www.behance.net/tonyisbuilding',
+    icon: '/icons/furniture.svg',
+  },
+];
+
+const FeaturedProjectsSection: React.FC = () => {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const toggleCard = (id: number) => {
+    setExpandedId(prev => (prev === id ? null : id));
+  };
+
+  const renderProjectCard = (project: Project, flexClass: string) => {
+    const isExpanded = expandedId === project.id;
+    const detailsId = `project-details-${project.id}`;
+
     return (
-        <section className="featured-section">
+      <div className={`project-card ${flexClass}`} key={project.id}>
+        <Image
+          src={project.image}
+          alt={project.alt}
+          className="project-image"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
 
-            <div className="section-header">
-                <span className="services-badge">Portfolio</span>
-                <div className="cwrap">
-                    <h2 className="section-title">Featured Project</h2>
-                    <a href="https://www.behance.net/tonyisbuilding" className="view-more">
-                        View more projects
-                        <ArrowUpRight size={20} className="view-more-icon" />
-                    </a>
-                </div>
+        <button
+          type="button"
+          className="mobile-project-toggle"
+          onClick={() => toggleCard(project.id)}
+          aria-expanded={isExpanded}
+          aria-controls={detailsId}
+        >
+          <span className="mobile-project-label">{project.company}</span>
+          <ChevronDown aria-hidden="true" className="mobile-project-icon" />
+        </button>
+
+        <div
+          id={detailsId}
+          className={`project-overlay${isExpanded ? ' is-expanded' : ''}`}
+        >
+          <div className="overlay-content">
+            <div className="overlay-top-section">
+              <div className="overlay-header">
+                <span
+                  className="company-icon"
+                  data-project={project.id}
+                  style={{
+                    WebkitMaskImage: `url(${project.icon})`,
+                    maskImage: `url(${project.icon})`,
+                  }}
+                  aria-hidden="true"
+                />
+                <h4 className="overlay-company">{project.company}</h4>
+              </div>
+
+              <div className="overlay-body">
+                <p className="overlay-description">{project.description1}</p>
+                <p className="overlay-description">{project.description2}</p>
+              </div>
             </div>
 
-            <div className="projects-flex-container">
-                {/* First Sub Container - Card 1 (65%) and Card 2 (35%) */}
-                <div className="projects-sub-container">
-                    <div className="project-card flex-card-65">
-                        <Image src={projects[0].image} alt={projects[0].alt} className="project-image" fill sizes="(max-width: 768px) 100vw, 50vw" />
-                        <div className="project-overlay">
-                            <div className="overlay-content">
-                                <div className="overlay-top-section">
-                                    <div className="overlay-header">
-                                        <div className="company-icon">
-                                            <Image
-                                                src="/icons/finance.svg"
-                                                alt="Company icon"
-                                                width={20}
-                                                height={20}
-                                            />
-                                        </div>
-                                        <h4 className="overlay-company">{projects[0].company}</h4>
-                                    </div>
-
-                                    <div className="overlay-body">
-                                        <p className="overlay-description">{projects[0].description1}</p>
-                                        <p className="overlay-description">{projects[0].description2}</p>
-                                    </div>
-                                </div>
-
-                                <div className="overlay-bottom-section">
-                                    <div className="service-tags">
-                                        {projects[0].services.map((service, idx) => (
-                                            <span key={idx} className="service-tag">{service}</span>
-                                        ))}
-                                    </div>
-                                    <a href={projects[0].link} className="overlay-link">
-                                        View Case Study →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="project-card flex-card-35">
-                        <Image src={projects[1].image} alt={projects[1].alt} className="project-image" fill sizes="(max-width: 768px) 100vw, 50vw" />
-                        <div className="project-overlay">
-                            <div className="overlay-content">
-                                <div className="overlay-top-section">
-                                    <div className="overlay-header">
-                                        <div className="company-icon">
-                                            <Image
-                                                src="/icons/insurance.svg"
-                                                alt="Company icon"
-                                                width={20}
-                                                height={20}
-                                            />
-                                        </div>
-                                        <h4 className="overlay-company">{projects[1].company}</h4>
-                                    </div>
-
-                                    <div className="overlay-body">
-                                        <p className="overlay-description">{projects[1].description1}</p>
-                                        <p className="overlay-description">{projects[1].description2}</p>
-                                    </div>
-                                </div>
-
-                                <div className="overlay-bottom-section">
-                                    <div className="service-tags">
-                                        {projects[1].services.map((service, idx) => (
-                                            <span key={idx} className="service-tag">{service}</span>
-                                        ))}
-                                    </div>
-                                    <a href={projects[1].link} className="overlay-link">
-                                        View Case Study →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Second Sub Container - Card 1 (40%) and Card 2 (60%) */}
-                <div className="projects-sub-container">
-                    <div className="project-card flex-card-40">
-                        <Image src={projects[2].image} alt={projects[2].alt} className="project-image" fill sizes="(max-width: 768px) 100vw, 50vw" />
-                        <div className="project-overlay">
-                            <div className="overlay-content">
-                                <div className="overlay-top-section">
-                                    <div className="overlay-header">
-                                        <div className="company-icon">
-                                            <Image
-                                                src="/icons/deforestation.svg"
-                                                alt="Company icon"
-                                                width={20}
-                                                height={20}
-                                            />
-                                        </div>                                        <h4 className="overlay-company">{projects[2].company}</h4>
-                                    </div>
-
-                                    <div className="overlay-body">
-                                        <p className="overlay-description">{projects[2].description1}</p>
-                                        <p className="overlay-description">{projects[2].description2}</p>
-                                    </div>
-                                </div>
-
-                                <div className="overlay-bottom-section">
-                                    <div className="service-tags">
-                                        {projects[2].services.map((service, idx) => (
-                                            <span key={idx} className="service-tag">{service}</span>
-                                        ))}
-                                    </div>
-                                    <a href={projects[2].link} className="overlay-link">
-                                        View Case Study →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="project-card flex-card-60">
-                        <Image src={projects[3].image} alt={projects[3].alt} className="project-image" fill sizes="(max-width: 768px) 100vw, 50vw" />
-                        <div className="project-overlay">
-                            <div className="overlay-content">
-                                <div className="overlay-top-section">
-                                    <div className="overlay-header">
-                                        <div className="company-icon">
-                                            <Image
-                                                src="/icons/furniture.png"
-                                                alt="Company icon"
-                                                width={20}
-                                                height={20}
-                                            />
-                                        </div>                                               <h4 className="overlay-company">{projects[3].company}</h4>
-                                    </div>
-
-                                    <div className="overlay-body">
-                                        <p className="overlay-description">{projects[3].description1}</p>
-                                        <p className="overlay-description">{projects[3].description2}</p>
-                                    </div>
-                                </div>
-
-                                <div className="overlay-bottom-section">
-                                    <div className="service-tags">
-                                        {projects[3].services.map((service, idx) => (
-                                            <span key={idx} className="service-tag">{service}</span>
-                                        ))}
-                                    </div>
-                                    <a href={projects[3].link} className="overlay-link">
-                                        View Case Study →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div className="overlay-bottom-section">
+              <div className="service-tags">
+                {project.services.map((service, index) => (
+                  <span key={index} className="service-tag">
+                    {service}
+                  </span>
+                ))}
+              </div>
+              <a href={project.link} className="overlay-link">
+                View Case Study →
+              </a>
             </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
-        </section>
-    )
-}
+  return (
+    <section className="featured-section">
+      <div className="section-header">
+        <span className="services-badge">Portfolio</span>
+        <div className="cwrap">
+          <h2 className="section-title">Featured Project</h2>
+          <a href="https://www.behance.net/tonyisbuilding" className="view-more">
+            View more projects
+            <ArrowUpRight size={20} className="view-more-icon" />
+          </a>
+        </div>
+      </div>
+
+      <div className="projects-flex-container">
+        {/* First Sub Container - Card 1 (65%) and Card 2 (35%) */}
+        <div className="projects-sub-container">
+          {renderProjectCard(projects[0], 'flex-card-65')}
+          {renderProjectCard(projects[1], 'flex-card-35')}
+        </div>
+
+        {/* Second Sub Container - Card 1 (40%) and Card 2 (60%) */}
+        <div className="projects-sub-container">
+          {renderProjectCard(projects[2], 'flex-card-40')}
+          {renderProjectCard(projects[3], 'flex-card-60')}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FeaturedProjectsSection;

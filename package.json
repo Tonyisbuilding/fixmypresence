@@ -2,16 +2,16 @@
   "name": "fixmypresence",
   "version": "0.1.0",
   "private": true,
-"scripts": {
-  "dev": "WATCHPACK_POLLING=true CHOKIDAR_USEPOLLING=1 next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint"
-}
-,
+  "scripts": {
+    "dev": "WATCHPACK_POLLING=true CHOKIDAR_USEPOLLING=1 next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
+    "nodemailer": "^6.9.14",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
@@ -19,11 +19,11 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "typescript": "^5"
   }
-  
 }

@@ -47,13 +47,7 @@ const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
             Get started Now
             <div className="homepage-arrow-wrapper">
               <div className="homepage-arrow">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/icons/Arrow.svg"
-                  alt="Arrow icon"
-                  width={17}
-                  height={17}
-                />
+                <Image src="/icons/Arrow.svg" alt="Arrow icon" width={17} height={17} />
               </div>
             </div>
           </button>
@@ -64,9 +58,9 @@ const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
             aria-label="Book a call on Calendly"
             onClick={() => {
               const url = "https://calendly.com/thisboyisbuilding/introductory-call?hide_event_type_details=1&hide_gdpr_banner=1";
-              // @ts-ignore - injected by Calendly script
+              // @ts-expect-error Calendly injects initPopupWidget on window
               if (window.Calendly?.initPopupWidget) {
-                // @ts-ignore
+                // @ts-expect-error Calendly runtime function lacks types
                 window.Calendly.initPopupWidget({ url });
               } else {
                 // Fallback if the script hasn't loaded yet
@@ -77,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({ brief, onBriefChange, onGetStarted }) => {
             Book a call
             <span className="homepage-arrow-wrapper">
               <span className="homepage-arrow">
-                <img src="/icons/call.svg" alt="" width={17} height={17} />
+                <Image src="/icons/call.svg" alt="Phone icon" width={17} height={17} />
               </span>
             </span>
           </button>

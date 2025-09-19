@@ -1,13 +1,6 @@
 // components/Intro.tsx
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-
-
-
-const YOUTUBE_ID = 'r-iETptU7JY';
-const YOUTUBE_THUMB = `https://img.youtube.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`;
-const YOUTUBE_EMBED = "/images/Coming-soon-vid.mp4";
-
 const Intro = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -37,6 +30,12 @@ const Intro = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleScrollToPricing = () => {
+    if (typeof window === 'undefined') return;
+    const section = document.getElementById('pricing');
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section ref={sectionRef} className="intro-section">
@@ -114,7 +113,7 @@ const Intro = () => {
               <div className="achievement-number">40+</div>
               <div className="achievement-description">Projects completed across industries</div>
             </div>
-            <button className="get-started-button">
+            <button className="get-started-button" onClick={handleScrollToPricing}>
               <span>Get started</span>
               <div className="button-arrow" style={{ transform: 'rotate(45deg)' }}>
                 <svg width="30" height="30" viewBox="0 0 20 20" fill="none">
