@@ -95,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ onPriorityCallClick, links = DEFAULT_LI
         <div className="Nav-ctaRow">
           <button className="Nav-button" onClick={handlePriorityCall} type="button">
             <Image
-              src="/icons/premium.svg"
+              src="/icons/Premium.svg"
               alt="Premium icon"
               className="homepage-message-icon"
               width={20}
