@@ -64,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ onPriorityCallClick, links = DEFAULT_LI
           {/* logo (left) */}
           <Link href="/" className="homepage-logo" aria-label="FixMyPresence Home">
             <Image
-              src="/images/Fixmypresence-logo.svg"
+              src="/images/FMP logo.png"
               alt="FixMyPresence Logo"
               className="homepage-logo-img desktop-only"
               width={360}
