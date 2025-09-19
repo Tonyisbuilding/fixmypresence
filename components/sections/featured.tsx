@@ -57,7 +57,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    image: '/images/lalourde.png',
+    image: '/images/Lalourde.png',
     alt: 'Lalourde project',
     company: 'Lalourde.fr',
     description1:

@@ -104,7 +104,7 @@ export default function Footer() {
             <div className="footer-illustration">
 
                 <Image
-                    src="/images/footer-ill_.png"
+                    src="/images/Footer-ill_.png"
                     alt="Footer decorative line illustration"
                     width={5452}
                     height={449}

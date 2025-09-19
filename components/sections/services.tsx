@@ -51,7 +51,7 @@ const ServicesSection = () => {
               <div className="card-images">
                 <div className="for-img">
                 <Image className="hide-mobile" src="/images/Sumio-cap.png" alt="Website design example 1" width={600} height={400} />
-                <Image src="/images/ARBX.png" alt="Brand identity example 2" width={600} height={400} />
+                <Image src="/images/Arbx.png" alt="Brand identity example 2" width={600} height={400} />
                 </div>
                 <div className="for-content">
                   <p className="card-description00">
