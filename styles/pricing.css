@@ -517,6 +517,34 @@
 
   
 
+  /* Mobile responsive (Samsung S20 and similar) */
+@media (max-width: 768px) {
+  .pricing-card {
+    padding: 16px;
+    margin: 0 auto;
+  }
+
+  .card-title01 {
+    font-size: 22px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left; /* optional, looks better on small screens */
+  }
+
+  /* .price-amount {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .pricing-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+  } */
+}
+
+
 
 
   
