@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "WATCHPACK_POLLING=true CHOKIDAR_USEPOLLING=1 next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 3035",
     "lint": "next lint"
   },
   "dependencies": {
