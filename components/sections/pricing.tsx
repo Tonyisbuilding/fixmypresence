@@ -23,15 +23,15 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onChoosePlan }) => {
   const fmt = (n: number) => n.toLocaleString();
 
   // Totals
-  const totalLite = 2500 + (brandRefinementLite ? 1000 : 0);
-  const totalPro = 5000 + (brandRefinementPro ? 1000 : 0);
+  const totalLite = 5000 + (brandRefinementLite ? 1000 : 0);
+  const totalPro = 8500 + (brandRefinementPro ? 1000 : 0);
   const siteExtra = Math.max(0, sitePages - 8) * 600;
   const docExtra = documentPages > 200
     ? Math.floor((documentPages - 200) / 50) * 450
     : 0;
   const revExtra = Math.max(0, revisionRounds - 3) * 500;
   const fullTimeExtra = fullTimeAttention ? 4000 : 0;
-  const totalFull = 8000 + siteExtra + docExtra + revExtra + fullTimeExtra;
+  const totalFull = 12000 + siteExtra + docExtra + revExtra + fullTimeExtra;
 
   return (
     <section className="pricing-section" id="pricing">

@@ -33,6 +33,31 @@ export default function Home() {
           name="description"
           content="Web, brand, and material design for consultants and businesses that want to look the part."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://fixmypresence.com" />
+        <meta property="og:title" content="FixMyPresence – Strategic Design for Impact" />
+        <meta
+          property="og:description"
+          content="Web, brand, and material design for consultants and businesses that want to look the part."
+        />
+        <meta
+          property="og:image"
+          content="https://fixmypresence.com/images/Fixmypresence-OG.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="FixMyPresence brand and web design preview" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="FixMyPresence – Strategic Design for Impact" />
+        <meta
+          name="twitter:description"
+          content="Web, brand, and material design for consultants and businesses that want to look the part."
+        />
+        <meta
+          name="twitter:image"
+          content="https://fixmypresence.com/images/Fixmypresence-OG.jpg"
+        />
+        <meta name="twitter:image:alt" content="FixMyPresence brand and web design preview" />
       </Head>
 
       {/* Global Navigation */}
