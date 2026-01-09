@@ -26,6 +26,56 @@ export default function Document() {
           href="/icons/Fixmypresence-logomark.svg"
         />
         <link rel="shortcut icon" href="/icons/Fixmypresence-logomark-32×32.png" />
+        <link rel="apple-touch-icon" href="/icons/Fixmypresence-logomark-32×32.png" />
+
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "FixMyPresence",
+              "url": "https://fixmypresence.com",
+              "logo": "https://fixmypresence.com/icons/Fixmypresence-logomark.svg",
+              "description": "Specialized digital design studio building high-trust digital assets for capital allocators, advisory firms, and elite consultancies.",
+              "email": "tony@fixmypresence.com",
+              "sameAs": [],
+              "areaServed": [
+                { "@type": "Country", "name": "United Kingdom" },
+                { "@type": "Country", "name": "Switzerland" },
+                { "@type": "Country", "name": "Luxembourg" },
+                { "@type": "Country", "name": "Ireland" },
+                { "@type": "Country", "name": "Germany" }
+              ],
+              "knowsAbout": [
+                "Website Design",
+                "Brand Identity",
+                "Document Design",
+                "Pitch Decks",
+                "Investment Materials"
+              ]
+            }),
+          }}
+        />
+
+        {/* WebSite Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "FixMyPresence",
+              "url": "https://fixmypresence.com",
+              "description": "Strategic design for consultants and businesses that want to look the part.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "FixMyPresence"
+              }
+            }),
+          }}
+        />
       </Head>
       <body>
         <Main />

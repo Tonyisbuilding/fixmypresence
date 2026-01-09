@@ -12,6 +12,28 @@ export default function CSRComingSoon() {
           name="description"
           content="Our CSR commitment page is coming soon. FixMyPresence's legal team is preparing the details."
         />
+        <link rel="canonical" href="https://fixmypresence.com/csr" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://fixmypresence.com/csr" />
+        <meta property="og:title" content="CSR Commitment – Coming Soon | FixMyPresence" />
+        <meta
+          property="og:description"
+          content="Our CSR commitment page is coming soon. FixMyPresence's legal team is preparing the details."
+        />
+        <meta
+          property="og:image"
+          content="https://fixmypresence.com/images/Fixmypresence-OG.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="CSR Commitment – Coming Soon | FixMyPresence" />
+        <meta
+          name="twitter:description"
+          content="Our CSR commitment page is coming soon. FixMyPresence's legal team is preparing the details."
+        />
+        <meta
+          name="twitter:image"
+          content="https://fixmypresence.com/images/Fixmypresence-OG.jpg"
+        />
       </Head>
 
       <section>

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "WATCHPACK_POLLING=true CHOKIDAR_USEPOLLING=1 next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start --port 3035",
     "lint": "next lint"
   },
@@ -24,6 +25,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
+    "next-sitemap": "^4.2.3",
     "typescript": "^5"
   }
 }
