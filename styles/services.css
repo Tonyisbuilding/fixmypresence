@@ -317,7 +317,7 @@
 }
 
 @media (max-width: 767px) {
-  .service-card:nth-child(1) { --stack-top: 180px !; }
+  .service-card:nth-child(1) { --stack-top: 180px; }
   .service-card:nth-child(2) { --stack-top: 150px; }
   .service-card:nth-child(3) { --stack-top: 180px; }
   .service-card:nth-child(4) { --stack-top: 210px; }
